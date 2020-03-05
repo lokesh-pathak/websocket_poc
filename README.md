@@ -83,3 +83,20 @@ class ChatConsumer(WebsocketConsumer):
             'message': message
         }))
 ``` 
+
+#### Hit Socket via extension
+```
+url:- ws://127.0.0.1:8000/chat/1/
+{"command":"get_room_messages","message":"Hello"}
+```
+
+#### Hit socket via browser
+```
+http://127.0.0.1:8000/chat/
+
+then create room say, lobby
+
+http://127.0.0.1:8000/chat/lobby/
+
+open same url in two diffrent browser i.e in same room now you can broadcast to that room.
+```
