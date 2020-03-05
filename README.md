@@ -3,10 +3,16 @@
 #### reference git hub url: 
 https://github.com/andrewgodwin/channels-examples/tree/master/multichat/chat 
 
-#### basic explanation:
+#### Basic Explanation:
 https://blog.heroku.com/in_deep_with_django_channels_the_future_of_real_time_apps_in_django
 
 https://gearheart.io/blog/creating-a-chat-with-django-channels/
+
+#### Django Structure
+![alt text] (https://heroku-blog-files.s3.amazonaws.com/posts/1473343845-django-asgi-websockets.png)
+
+#### Django with Channels
+![alt text] (https://heroku-blog-files.s3.amazonaws.com/posts/1473343845-django-wsgi.png)
 
 ##Modify setting file
 ### Add channel layer definition
