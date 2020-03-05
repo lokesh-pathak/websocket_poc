@@ -9,10 +9,10 @@ https://blog.heroku.com/in_deep_with_django_channels_the_future_of_real_time_app
 https://gearheart.io/blog/creating-a-chat-with-django-channels/
 
 #### Django Structure
-![alt text] (https://heroku-blog-files.s3.amazonaws.com/posts/1473343845-django-asgi-websockets.png)
+<img src="https://heroku-blog-files.s3.amazonaws.com/posts/1473343845-django-asgi-websockets.png" width="450">
 
 #### Django with Channels
-![alt text] (https://heroku-blog-files.s3.amazonaws.com/posts/1473343845-django-wsgi.png)
+<img src="https://heroku-blog-files.s3.amazonaws.com/posts/1473343845-django-wsgi.png" width="450">
 
 ##Modify setting file
 ### Add channel layer definition
