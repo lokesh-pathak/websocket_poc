@@ -87,10 +87,11 @@ class ChatConsumer(WebsocketConsumer):
 
     def get_room_messages(self, data):
         """
+        sending messages to group
         """
         content = {
             'command': 'get_room_messages',
-            'data': "Socket get connected successfully.",
+            'data': data['message'],
         }
         self.send_message(content)
 
@@ -99,6 +100,9 @@ class ChatConsumer(WebsocketConsumer):
     }
 
     def connect(self):
+        """
+        Called when the websocket is handshaking as part of initial connection.
+        """
         self.room_name = self.scope['url_route']['kwargs']['group_id']
         self.room_group_name = 'chat_%s' % self.room_name
         async_to_sync(self.channel_layer.group_add)(
@@ -108,14 +112,24 @@ class ChatConsumer(WebsocketConsumer):
         self.accept()
 
     def disconnect(self, close_code):
+        """
+        Called when the WebSocket closes for any reason.
+        """
         async_to_sync(self.channel_layer.group_discard)(
             self.room_group_name,
             self.channel_name
         )
 
     def receive(self, text_data):
+        """
+        Called when we get a text frame. Channels will JSON-decode the payload
+        for us and pass it as the first argument.
+        """
         data = json.loads(text_data)
         self.commands[data['command']](self, data)
 
     def send_message(self, message):
+        """
+        Formatting the data to json for broadcast
+        """
         self.send(text_data=json.dumps(message))
